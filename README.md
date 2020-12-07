@@ -1,6 +1,6 @@
 # Dominos.NET
 **A C# Wrapper for [pizzapi.](https://github.com/ggrammar/pizzapi)**<br>
-Order Dominos Pizza using .NET! (Works in the US and Canada, more country support coming soon.)
+Order Dominos Pizza using .NET! (Works in the US and Canada, more country support coming soon.)<br>
 **Made with [JSON.Net.](https://www.newtonsoft.com/json)**
 
 
