@@ -4,5 +4,5 @@ Order Dominos Pizza using .NET! (Works in the US and Canada, more country suppor
 
 
 # Installation
-1. Install [JSON.Net]("https://www.newtonsoft.com/json")
+1. Install [JSON.Net](https://www.newtonsoft.com/json)
 
