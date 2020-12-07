@@ -8,5 +8,5 @@ Order Dominos Pizza using .NET! (Works in the US and Canada, more country suppor
 2. Add the .csproj file to your project, or all of the code files individually.
 3. Get pizza-ing!
 
-#T utorial
+# Tutorial
 
