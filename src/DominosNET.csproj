@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageId>Dominos.NET</PackageId>
+    <Authors>Kyle Mukundi</Authors>
+    <Company>Dominos.NET</Company>
+    <Product>DominosNET</Product>
+    <Description>A NET library for ordering Dominos Pizza, works in the US and Canada.</Description>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageIcon>dominos.png</PackageIcon>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/TheBonelessAlien/Dominos.NET</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.Json" Version="4.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\Downloads\dominos.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
