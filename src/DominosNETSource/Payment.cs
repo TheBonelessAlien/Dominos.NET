@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 namespace DominosNET.Payment
 {
    /// <summary>
-   /// Class for paying via credit card, with some logic to see if your card is valid.
+   /// Class for paying via credit card, with some nice logic to see if your card is valid using regular expressions (regex).
    /// </summary>
     public class PaymentObject
     {
