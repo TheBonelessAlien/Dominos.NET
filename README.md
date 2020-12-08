@@ -51,7 +51,7 @@ D20BZRO    20oz Bottle Coke Zero™   $1.89
 2LDCOKE    2-Liter Diet Coke®       $2.99
 2LCOKE     2-Liter Coke®            $2.99
 ```
-Create an order and add items to the order (this adds a 12 inch hand tossed pepperoni feast pizza and a 500mL Diet Coke to the order):
+Create an order and add items to the order:
 ```cs
 Order order = new Order(store, customer, address, "ca");
 ``` 
