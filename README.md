@@ -45,7 +45,11 @@ menu.search("Coke");
 ```
 prints to the console something along the lines of:
 ```
-500COKE 500ml Coke®    $2.49<br>2LCOKE2  LitreCoke®  $3.99<br>12CCOKE  355ml Coke® Can  $1.49<br>500DIETC  500ml Diet Coke®  2.49<br>2LDCOKE  2 Litre Diet Coke®  $3.99<br>12CDCOKE  355ml Diet Coke® Can  $1.49<br>310COKENRG  Coca-Cola Energy, 310mLcan  $3.49  
+20BCOKE    20oz Bottle Coke®        $1.89
+20BDCOKE   20oz Bottle Diet Coke®   $1.89
+D20BZRO    20oz Bottle Coke Zero™   $1.89
+2LDCOKE    2-Liter Diet Coke®       $2.99
+2LCOKE     2-Liter Coke®            $2.99
 ```
 Create an order and add items to the order (this adds a 12 inch hand tossed pepperoni feast pizza and a 500mL Diet Coke to the order):
 ```cs
