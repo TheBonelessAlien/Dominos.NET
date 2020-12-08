@@ -21,6 +21,8 @@ using DominosNET.Stores;
 using DominosNET.Customer;
 using DominosNET.Address;
 using DominosNET.Order;
+using DominosNET.Payment;
+using DominosNET.Menu;
 ```
 Construct a `Customer`and `Address` object.
 ```cs
