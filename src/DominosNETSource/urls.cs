@@ -5,7 +5,7 @@ using System.Text;
 namespace DominosNET.urls
 {
     /// <summary>
-    /// Class for accessing the URLs from other namespaces.
+    /// Class for getting the URLs to send HTTP requests.
     /// </summary>
     public class urls
     {
