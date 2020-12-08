@@ -45,7 +45,7 @@ menu.search("Coke");
 ```
 prints to the console something along the lines of:
 ```
-500COKE  500ml Coke®  $2.49                                                                                             2LCOKE  2 Litre Coke®  $3.99                                                                                            12CCOKE  355 ml Coke® Can  $1.49                                                                                        500DIETC  500ml Diet Coke®  2.49                                                                                        2LDCOKE  2 Litre Diet Coke®  $3.99                                                                                      12CDCOKE  355 ml Diet Coke® Can  $1.49                                                                                  310COKENRG  Coca-Cola Energy, 310mL can  $3.49      
+500COKE 500ml Coke®    $2.49<br>2LCOKE2  LitreCoke®  $3.99<br>12CCOKE  355ml Coke® Can  $1.49<br>500DIETC  500ml Diet Coke®  2.49<br>2LDCOKE  2 Litre Diet Coke®  $3.99<br>12CDCOKE  355ml Diet Coke® Can  $1.49<br>310COKENRG  Coca-Cola Energy, 310mLcan  $3.49  
 ```
 Create an order and add items to the order (this adds a 12 inch hand tossed pepperoni feast pizza and a 500mL Diet Coke to the order):
 ```cs
@@ -62,7 +62,7 @@ order.add_item(3, "500DIETC"); //adds 3 500ml diet cokes
 Or, remove items from the order:
 ```cs
 order.remove_item(2, "500DIETC"); //removes 2 500ml diet cokes, leaving you with 1 (simple math 😎)
-``
+```
 Finally, when you are done, place your order!
 There are two methods to do this, credit card or no credit card.
 Lets go over the first one. To place an order with a credit card, construct a `PaymentObject` and use that.
