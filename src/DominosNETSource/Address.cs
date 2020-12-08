@@ -12,7 +12,7 @@ namespace DominosNET.Address
         DriveUpCarryout
     }
     /// <summary>
-    /// The class for the user's address. NOTE: If you live in Canada, region is your province, and zip is your postal code.
+    /// The class for the user's address. NOTE: If you live in Canada, region is your province/territory, and zip is your postal code.
    /// </summary>
     public class Address
     {
