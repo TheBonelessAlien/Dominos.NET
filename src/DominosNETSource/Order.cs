@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 namespace DominosNET.Order
 {
     /// <summary>
+    /// Class for creating and placing an order.
     /// NOTE: Coupons are applied when you place the order, they do not affect the price variable.
     /// </summary>
     public class Order
