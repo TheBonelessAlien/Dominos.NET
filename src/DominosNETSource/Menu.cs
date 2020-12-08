@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace DominosNET.Menu
 {
    /// <summary>
-   /// NOTE: DO NOT TOUCH unless you know what you're doing lol
+   /// Class for a store's menu.
    /// </summary>
     public class Menu
     {
