@@ -11,7 +11,7 @@ Order Dominos Pizza using .NET! (Works in the US and Canada, more country suppor
 
 # Tutorial
 **Coupons coming soon!**
-NOTE: Set your consoles encoding to UTF8 for certain symbols to render:
+NOTE: Set your consoles encoding to UTF8 for certain symbols such as ® to render:
 ```cs
 Console.Encoding = Encoding.UTF8;
 ```
