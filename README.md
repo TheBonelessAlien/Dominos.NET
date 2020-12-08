@@ -1,11 +1,11 @@
 # Dominos.NET
 **A C# Wrapper for [pizzapi.](https://github.com/ggrammar/pizzapi)**<br>
 Order Dominos Pizza using .NET! (Works in the US and Canada, more country support coming soon.)<br>
-**Made with [JSON.Net.](https://www.newtonsoft.com/json)**
+**Made with [Json.NET.](https://www.newtonsoft.com/json)**
 **DO NOT EDIT THE FILES UNLESS YOU KNOW WHAT YOU ARE DOING.**
 
 # Installation
-1. Install [JSON.Net](https://www.newtonsoft.com/json) via NuGet
+1. Install [Json.NET](https://www.newtonsoft.com/json) via NuGet
 2. Add the DominosNETSource folder to your project.
 3. Get pizza-ing!
 
