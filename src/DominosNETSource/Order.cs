@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using DominosNET.Customer;
@@ -15,8 +15,8 @@ using System.Threading.Tasks;
 namespace DominosNET.Order
 {
     /// <summary>
-    /// Class for creating and placing an order.
     /// NOTE: Coupons are applied when you place the order, they do not affect the price variable.
+    /// Be sure to be aware of the products you are ordering with coupons.
     /// </summary>
     public class Order
     {
@@ -126,13 +126,77 @@ namespace DominosNET.Order
             for (int i = 0; i < quantityToRemove; i++)
             {
 
-                JObject item = (JObject)menuJSON["Variants"][itemCode];
+                JObject item = (JObject)menuJSON["Coupons"][itemCode];
                 JArray a = (JArray)Data["Products"];
                 a.Remove((JToken)item);
                 price -= item["Price"].ToObject<double>();
 
             }
 
+        }
+        public void add_coupon(string couponCode)
+        {
+            bool isAcceptableOrderType = false;
+
+            if ((JObject)menuJSON["Coupons"][couponCode] == null)
+            {
+                throw new InvalidItemCodeException("Invalid coupon code.");
+            }
+
+            JObject item = (JObject)menuJSON["Coupons"][couponCode];
+            JArray a = (JArray)Data["Coupons"];
+           
+                
+                foreach (var vsm in JArray.Parse(item["Tags"]["ValidServiceMethods"].ToString()).Children())
+                {
+
+                    if (address.serviceType.ToString() == vsm.ToString())
+                    {
+                        isAcceptableOrderType = true;
+                        break;
+                    }
+
+                }
+
+            
+            if (!isAcceptableOrderType)
+            {
+                throw new Exception("Coupon does not support your service type.");
+            }
+            foreach (var coupon in a.Children())
+            {
+                JObject couponO = (JObject)coupon;
+               if (couponO["Code"].ToString() == couponCode)
+                {
+                    Console.WriteLine("Coupon already exists!");
+                    return;
+                }
+            }
+
+            a.Add((JToken)item);
+
+
+        }
+        public void remove_coupon(string couponCode)
+        {
+            
+                
+           
+            JArray a = JArray.Parse(Data["Coupons"].ToString());
+            
+            
+
+
+           for (int i = 0; i < a.Count; i++)
+            {
+                JObject coupon = (JObject)a[i];
+                if (JObject.Parse(coupon.ToString())["Code"].ToString() == couponCode)
+                {
+                                
+                    Console.WriteLine(a.Remove((JToken)coupon));
+                    Data["Coupons"] = JArray.Parse(a.ToString());
+                }
+            }
         }
         private JObject send(string URL, bool Merge, string content)
         {
@@ -257,55 +321,3 @@ namespace DominosNET.Order
         }
     }
 }
-
-/* this code may be useful later so im savin it here
- JArray acceptableCards = (JArray)store.Data["AcceptableCreditCards"];
-            JArray acceptablePaymentTypes = (JArray)store.Data["AcceptablePaymentTypes"];
-            if (acceptablePaymentTypes["CreditCard"] == null)
-            {
-                throw new Exception("Store does not support credit cards.");
-            }
-            if (acceptableCards[o.ToString()] != null)
-            {
-                JArray paymentArray = JArray.Parse(Data["Payments"].ToString());
-                JObject typeObj = new JObject();
-                typeObj.Add("Type", "CreditCard");
-                typeObj.Add("Expiration", o.expiration);
-                typeObj.Add("Amount", 0);
-                typeObj.Add("CardType", o.type.ToString());
-                typeObj.Add("Number", int.Parse(o.number));
-                typeObj.Add("SecurityCode", int.Parse(o.cvv));
-                typeObj.Add("PostalCode", int.Parse(o.zip));
-                paymentArray.Add(typeObj);
-                HttpClient c = new HttpClient();
-                if (Country == "ca")
-                {
-                    
-                   
-                   
-                    var stringContent = new StringContent(@"""Order"": " + Data.ToString(), Encoding.UTF8, "application/json");
-                    c.DefaultRequestHeaders.Add("Referer", "https://order.dominos.com/en/pages/order/");
-                    c.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                    Task<HttpResponseMessage> m = c.PostAsync(urls.urls.ca["price_url"], stringContent);
-                    
-                    Console.WriteLine("Response: " + m.Result.Content.ReadAsStringAsync().Result);
-                    
-                }
-                else
-                {
-                    var stringContent = new StringContent(@"""Order"": " + Data.ToString(), Encoding.UTF8, "application/json");
-                    c.DefaultRequestHeaders.Add("Referer", "https://order.dominos.com/en/pages/order/");
-                    c.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                    Task<HttpResponseMessage> m = c.PostAsync(urls.urls.us["price_url"], stringContent);
-                    Console.WriteLine("Response: " + m.Result.Content.ReadAsStringAsync().Result);
-                }
-            }
-            else
-            {
-                throw new Exception("Credit card type unsupported.");
-            }
-
-            /// <summary>
-            /// Make sure the type has only the first letter uppercase (e.g cAsH should be Cash)
-            /// </summary>
-*/
