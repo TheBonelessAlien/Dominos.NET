@@ -63,11 +63,11 @@ Order order = new Order(store, customer, address, "us");
 ``` 
 Add items to the order:
 ```cs
-order.add_item(3, "500DIETC"); //adds 3 500ml diet cokes
+order.add_item(3, "2LDCOKE"); //adds 3 2 litre diet cokes
 ```
 Or, remove items from the order:
 ```cs
-order.remove_item(2, "500DIETC"); //removes 2 500ml diet cokes, leaving you with 1 (simple math 😎)
+order.remove_item(2, "2LDCOKE"); //removes 2 2 litre diet cokes, leaving you with 1 (simple math 😎)
 ```
 Finally, when you are done, place your order!
 There are two methods to do this, credit card or no credit card.
