@@ -90,4 +90,8 @@ You could also pay with GiftCard, CreditCard, DoorDebit, DoorCredit (will throw 
 ```cs
 order.place("GiftCard");
 ```
+Or, if you don't want to actually order something, use pay_with to test.
+```cs
+order.pay_with("Cash");
+```
 That's all, enjoy! Of course, more will be added in the future. I would like to see your creations with this!
