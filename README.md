@@ -2,7 +2,7 @@
 **A C# Wrapper for [pizzapi.](https://github.com/ggrammar/pizzapi)**<br>
 Order Dominos Pizza using .NET! (Works in the US and Canada, more country support coming soon.)<br>
 **Made with [Json.NET.](https://www.newtonsoft.com/json)**
-**DO NOT EDIT THE FILES UNLESS YOU KNOW WHAT YOU ARE DOING.**
+
 
 # Installation
 1. Install [Json.NET](https://www.newtonsoft.com/json) via NuGet
