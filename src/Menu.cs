@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using DominosNET.Stores;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace DominosNET.Menu
 {
    /// <summary>
-   /// NOTE: DO NOT TOUCH unless you know what you're doing lol
+   /// TIP: You can also search for coupons, since im such a nice guy tryna save you money.
    /// </summary>
     public class Menu
     {
@@ -50,6 +50,32 @@ namespace DominosNET.Menu
             foreach (var predefinedproduct in predefinedproducts)
             {
                
+                if (JObject.Parse(predefinedproduct.Value.ToString())["Code"].ToString().ToLower().Contains(searchTerm.ToLower()) && JObject.Parse(predefinedproduct.Value.ToString())["Price"] != null)
+                {
+
+                    Console.WriteLine(JObject.Parse(predefinedproduct.Value.ToString())["Code"].ToString() + "  " + JObject.Parse(predefinedproduct.Value.ToString())["Name"].ToString() + "  " + "$" + JObject.Parse(predefinedproduct.Value.ToString())["Price"]);
+                }
+                else if (JObject.Parse(predefinedproduct.Value.ToString())["Name"].ToString().ToLower().Contains(searchTerm.ToLower()) && JObject.Parse(predefinedproduct.Value.ToString())["Price"] != null)
+                {
+                    Console.WriteLine(JObject.Parse(predefinedproduct.Value.ToString())["Code"].ToString() + "  " + JObject.Parse(predefinedproduct.Value.ToString())["Name"].ToString() + "  " + JObject.Parse(predefinedproduct.Value.ToString())["Price"]);
+                }
+                else if (JObject.Parse(predefinedproduct.Value.ToString())["Name"].ToString().ToLower().Contains(searchTerm.ToLower()) && JObject.Parse(predefinedproduct.Value.ToString())["Price"] != null)
+                {
+                    Console.WriteLine(JObject.Parse(predefinedproduct.Value.ToString())["Code"].ToString() + "  " + JObject.Parse(predefinedproduct.Value.ToString())["Name"].ToString() + "  " + JObject.Parse(predefinedproduct.Value.ToString())["Price"]);
+                }
+            }
+        }
+        /// <summary>
+        /// Searches the menu for coupons to get products for a discount (e.g add a 6-piece Marbled Cookie Brownie for 3.99.) 
+        /// </summary>
+
+        public void SearchCoupons(string searchTerm)
+        {
+            JObject predefinedproducts = JObject.Parse(MenuJSON["Coupons"].ToString());
+
+            foreach (var predefinedproduct in predefinedproducts)
+            {
+
                 if (JObject.Parse(predefinedproduct.Value.ToString())["Code"].ToString().ToLower().Contains(searchTerm.ToLower()) && JObject.Parse(predefinedproduct.Value.ToString())["Price"] != null)
                 {
 
