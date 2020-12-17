@@ -53,6 +53,11 @@ D20BZRO    20oz Bottle Coke Zero™   $1.89
 2LDCOKE    2-Liter Diet Coke®       $2.99
 2LCOKE     2-Liter Coke®            $2.99
 ```
+Or, you can search coupons.
+```cs
+menu.SearchCoupons(" ");
+```
+(This would literally print all the coupons on the menu)
 Create an order and add items to the order:
 ```cs
 Order order = new Order(store, customer, address, "ca");
@@ -68,6 +73,11 @@ order.add_item(3, "2LDCOKE"); //adds 3 2 litre diet cokes
 Or, remove items from the order:
 ```cs
 order.remove_item(2, "2LDCOKE"); //removes 2 2 litre diet cokes, leaving you with 1 (simple math 😎)
+```
+You can also do the same with coupons:
+```cs
+order.add_coupon(69420);
+order.remove_coupon(69420);
 ```
 Finally, when you are done, place your order!
 There are two methods to do this, credit card or no credit card.
@@ -95,3 +105,4 @@ Or, if you don't want to actually order something, use pay_with to test.
 order.pay_with("Cash");
 ```
 That's all, enjoy! Of course, more will be added in the future. I would like to see your creations with this!
+DM me on Discord if you have any questions.
