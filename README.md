@@ -57,7 +57,7 @@ Or, you can search coupons.
 ```cs
 menu.SearchCoupons(" ");
 ```
-(This would literally print all the coupons on the menu)
+(This would literally print all the coupons on the menu) <br>
 Create an order and add items to the order:
 ```cs
 Order order = new Order(store, customer, address, "ca");
